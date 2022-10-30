@@ -7,7 +7,6 @@ import tkinter as tk
 import ttkbootstrap as ttk #pip install ttkbootstrap
 import funktsioonid
 
-
 #funktsioonid paigutuseks 
 def vahetus_vk_raami():
     vk_tiitel.place(x=300,y=40)
@@ -63,12 +62,10 @@ BUTTON_MARGIN=40
 #GUI
 root=tk.Tk()
 root.geometry("800x400") #akna suurus
-#root['background']='grey'
 root.title("Kalkulaatorid") #peaakna tiitel
 style = ttk.Style("darkly") #stiilid: https://ttkbootstrap.readthedocs.io/en/latest/themes/dark/
 root.resizable(False, False)
 
-#current_theme = style.theme_use('awdark')
 #muutujad ja widgetid
 #vektorkorrutis
 vk_tiitel = ttk.Label(root, text="Vektorkorrutis")
@@ -106,7 +103,6 @@ nupp= ttk.Button(
     width=BUTTON_WIDTH,
     command=exit,
 )
-#menüü nuppude paigutus https://www.pythontutorial.net/tkinter/tkinter-grid/
 
 #menüü nuppude asetus
 vkcalc.place(
