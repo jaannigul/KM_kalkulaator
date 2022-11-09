@@ -34,4 +34,4 @@ def segakorrutis(a,b,c,d,e,f,g,h,i):
     abc=(a*e*i)+(b*f*g)+(c*d*h)
     abc2=-(g*e*c)-(h*f*a)-(i*d*b)
     vastus=abc+abc2
-    return (f'Segakorrutise vastus on: {vastus}')
+    return vastus
