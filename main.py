@@ -252,6 +252,7 @@ sk_nupp_arvuta=ttk.Button(root,text="Arvuta",command=sk_input)
 sk_kuva_vastus=tk.Label(root)
 
 #2. järku determinant
+
 tjärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
 tdet_a11=ttk.Entry(root, width=6)
 tdet_a12=ttk.Entry(root, width=6)
@@ -338,7 +339,7 @@ vdet_a55=ttk.Entry(root, width=6)
 vjärkudet_arvuta=ttk.Button(root,text="Arvuta",command=vjärkudet_input)
 vjärkudet_kuva_vastus=tk.Label(root)
 
-#muutujad listis
+#muutujad listis sega ja vektorkorrutis
 muutujad=[[vk_tiitel,
            vk_vektor1x,vk_vektor1y,vk_vektor1z,
            vk_vektor1_tekst,
@@ -351,6 +352,36 @@ muutujad=[[vk_tiitel,
            sk_x3,sk_y3,sk_z3,
            sk_nupp_arvuta,sk_kuva_vastus], #1
           ]
+
+#muutujad 2-5 determinant
+muutujad2=[[tjärkudet_tiitel,
+        tdet_a11,tdet_a12,tdet_a21,tdet_a22,
+        tjärkudet_arvuta,tjärkudet_kuva_vastus],#2x2
+           
+        [kjärkudet_tiitel,
+         kdet_a11,kdet_a12,kdet_a13,
+         kdet_a21,kdet_a22,kdet_a23,
+         kdet_a31,kdet_a32,kdet_a33,
+         kjärkudet_arvuta,kjärkudet_kuva_vastus],#3x3
+           
+        [njärkudet_tiitel,
+         ndet_a11,ndet_a12,ndet_a13,ndet_a14,
+         ndet_a21,ndet_a22,ndet_a23,ndet_a24,
+         ndet_a31,ndet_a32,ndet_a33,ndet_a34,
+         ndet_a41,ndet_a42,ndet_a43,ndet_a44,
+         njärkudet_arvuta,njärkudet_kuva_vastus],#4x4
+           
+        [vjärkudet_tiitel,
+         vdet_a11,vdet_a12,vdet_a13,vdet_a14,vdet_a15,
+         vdet_a21,vdet_a22,vdet_a23,vdet_a24,vdet_a25,
+         vdet_a31,vdet_a32,vdet_a33,vdet_a34,vdet_a35,
+         vdet_a41,vdet_a42,vdet_a43,vdet_a44,vdet_a45,
+         vdet_a51,vdet_a52,vdet_a53,vdet_a54,vdet_a55, #5x5
+         vjärkudet_arvuta,vjärkudet_kuva_vastus
+         ]]
+
+
+
 #menüü nupud
 vkcalc = ttk.Button(
     root,
