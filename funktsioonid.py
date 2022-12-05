@@ -1,3 +1,8 @@
+import numpy as np
+import fractions
+import math
+from fractions import Fraction
+
 #vektorkorrutis
 def vektorkorrutis(x1,x2,x3,y1,y2,y3):
 
@@ -7,9 +12,7 @@ def vektorkorrutis(x1,x2,x3,y1,y2,y3):
     c=(ab1,-ab2,ab3)
     return c
 
-#Ruutvõrrand õige
-import math
-from fractions import Fraction
+
 #Ruutvõrrand õige
 def ruutvõrrand(a,b,c):  
     D=b**2-4*a*c
@@ -64,7 +67,7 @@ def det5(a11, a12, a13, a14, a15,a21, a22, a23, a24, a25,a31, a32, a33, a34, a35
 
 #4. järku
 def det4(a11, a12, a13, a14,a21, a22, a23, a24,a31, a32, a33, a34,a41, a42, a43, a44):  
-    # creating a 5X5 Numpy matrix
+    # creating a 4x4 Numpy matrix
     n_array = np.array([[[a11, a12, a13, a14],
                         [a21, a22, a23, a24],
                         [a31, a32, a33, a34],
@@ -75,8 +78,6 @@ def det4(a11, a12, a13, a14,a21, a22, a23, a24,a31, a32, a33, a34,a41, a42, a43,
       
     return int(det)
 
-import numpy as np
-import fractions
 
 #2*2 pöördmatrix
 def pöörd2m(a11,a12,a21,a22):
@@ -86,7 +87,7 @@ def pöörd2m(a11,a12,a21,a22):
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
-        return 0
+        return 'Pöördmaatriks puudub'
     else:
         # Calculating the inverse of the matrix
         inv=np.linalg.inv(A)
@@ -105,7 +106,7 @@ def pöörd3m(a11,a12,a13,a21,a22,a23,a31,a32,a33):
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
-        return 0
+        return 'Pöördmaatriks puudub'
     else:
         # Calculating the inverse of the matrix
         inv=np.linalg.inv(A)
@@ -123,7 +124,7 @@ def pöörd4m(a11,a12,a13,a14,a21,a22,a23,a24,a31,a32,a33,a34,a41,a42,a43,a44):
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
-        return 0
+        return 'Pöördmaatriks puudub'
     else:
         # Calculating the inverse of the matrix
         inv=np.linalg.inv(A)
@@ -133,16 +134,17 @@ def pöörd4m(a11,a12,a13,a14,a21,a22,a23,a24,a31,a32,a33,a34,a41,a42,a43,a44):
 
     
     #5*5 pöördmatrix
-def pöörd5m(a11,a12,a13,a14,a15,a21,a22,a23,a24,a25,a31,a32,a33,a34,a35,a41,a42,a43,a44,a45):
+def pöörd5m(a11,a12,a13,a14,a15,a21,a22,a23,a24,a25,a31,a32,a33,a34,a35,a41,a42,a43,a44,a45,a51,a52,a53,a54,a55):
     # Taking a 5*5 matrix
     A = np.array([[a11, a12, a13,a14,a15],
                   [a21,a22,a23,a24,a25],
                   [a31,a32,a33,a34,a35],
-                  [a41,a42,a43,a44,a45]])
+                  [a41,a42,a43,a44,a45],
+                  [a51,a52,a53,a54,a55]])
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
-        return 0
+        return 'Pöördmaatriks puudub'
     else:
         # Calculating the inverse of the matrix
         inv=np.linalg.inv(A)
