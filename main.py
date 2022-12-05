@@ -201,9 +201,9 @@ def det_menu(valik):
         vahetus_det2_raami()
     if valik=="3. järku determinant":
         vahetus_det3_raami()
-    if valik.get()=="4. järku determinant":
+    if valik=="4. järku determinant":
         vahetus_det4_raami()
-    if valik.get()=="5. järku determinant":
+    if valik=="5. järku determinant":
         vahetus_det5_raami()
 BUTTON_WIDTH=30
 BUTTON_MARGIN=40
@@ -262,7 +262,7 @@ tjärkudet_arvuta=ttk.Button(root,text="Arvuta",command=tjärkudet_input)
 tjärkudet_kuva_vastus=tk.Label(root)
 
 #3. järku determinant
-kjärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
+kjärkudet_tiitel=ttk.Label(root,text="Kolmandat järku determinant")
 kdet_a11=ttk.Entry(root, width=6)
 kdet_a12=ttk.Entry(root, width=6)
 kdet_a13=ttk.Entry(root, width=6)
@@ -279,7 +279,7 @@ kjärkudet_arvuta=ttk.Button(root,text="Arvuta",command=kjärkudet_input)
 kjärkudet_kuva_vastus=tk.Label(root)
 
 #4. järku determinant
-njärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
+njärkudet_tiitel=ttk.Label(root,text="Neljandat järku determinant")
 ndet_a11=ttk.Entry(root, width=6)
 ndet_a12=ttk.Entry(root, width=6)
 ndet_a13=ttk.Entry(root, width=6)
@@ -304,7 +304,7 @@ njärkudet_arvuta=ttk.Button(root,text="Arvuta",command=njärkudet_input)
 njärkudet_kuva_vastus=tk.Label(root)
 
 #5. järku determinant
-vjärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
+vjärkudet_tiitel=ttk.Label(root,text="Viiendat järku determinant")
 vdet_a11=ttk.Entry(root, width=6)
 vdet_a12=ttk.Entry(root, width=6)
 vdet_a13=ttk.Entry(root, width=6)
