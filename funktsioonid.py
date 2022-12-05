@@ -35,25 +35,27 @@ def segakorrutis(a,b,c,d,e,f,g,h,i):
     abc2=-(g*e*c)-(h*f*a)-(i*d*b)
     vastus=abc+abc2
     return vastus
+
 #determinandid
 import numpy as np
 #2. järku
-def det2(a,b,c,d):
-    determinant2=(a*d)-(b*c)
+def det2(a11,a12,a21,a22):
+    determinant2=(a11*a22)-(a12*a21)
     return determinant2
 
 #3. järku
-def det3(a,b,c,d,e,f,g,h,i):
-    determinant3=(a*e*i)+(b*f*g)+(d*h*c)-(g*e*c)-(d*b*i)-(h*f*a)
+def det3(a11,a12,a13,a21,a22,a23,a31,a32,a33):
+    determinant3=(a11*a22*a33)+(a12*a23*a31)+(a21*a32*a13)-(a31*a22*a13)-(a21*a12*a33)-(a32*a23*a11)
     return determinant3
+
 #5. järku
-def det5(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,õ,ä):  
+def det5(a11, a12, a13, a14, a15,a21, a22, a23, a24, a25,a31, a32, a33, a34, a35,a41, a42, a43, a44, a45,a51, a52, a53, a54, a55):  
     # creating a 5X5 Numpy matrix
-    n_array = np.array([[a, b, c, d, e],
-                        [f, g, h, i, j],
-                        [k, l, m, n, o],
-                        [p, q, r, s, t],
-                        [u, v, w, õ, ä]])
+    n_array = np.array([[a11, a12, a13, a14, a15],
+                        [a21, a22, a23, a24, a25],
+                        [a31, a32, a33, a34, a35],
+                        [a41, a42, a43, a44, a45],
+                        [a51, a52, a53, a54, a55]])
       
     # calculating the determinant of matrix
     det = np.linalg.det(n_array)
@@ -61,12 +63,12 @@ def det5(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,õ,ä):
     return int(det)
 
 #4. järku
-def det4(a,b,c,d,f,g,h,i,k,l,m,n,p,q,r,s):  
+def det4(a11, a12, a13, a14,a21, a22, a23, a24,a31, a32, a33, a34,a41, a42, a43, a44):  
     # creating a 5X5 Numpy matrix
-    n_array = np.array([[a, b, c, d],
-                        [f, g, h, i],
-                        [k, l, m, n],
-                        [p, q, r, s]])
+    n_array = np.array([[[a11, a12, a13, a14],
+                        [a21, a22, a23, a24],
+                        [a31, a32, a33, a34],
+                        [a41, a42, a43, a44]]])
       
     # calculating the determinant of matrix
     det = np.linalg.det(n_array)
@@ -77,10 +79,10 @@ import numpy as np
 import fractions
 
 #2*2 pöördmatrix
-def pöörd2m(a,b,c,d):
+def pöörd2m(a11,a12,a21,a22):
     # Taking a 2*2 matrix
-    A = np.array([[a, b],
-                  [c,d]])
+    A = np.array([[a11, a12],
+                  [a21,a22]])
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
@@ -95,11 +97,11 @@ def pöörd2m(a,b,c,d):
     
 
 #3*3 pöördmatrix
-def pöörd3m(a,b,c,d,e,f,g,h,i):
+def pöörd3m(a11,a12,a13,a21,a22,a23,a31,a32,a33):
     # Taking a 3*3 matrix
-    A = np.array([[a, b, c],
-                  [d,e,f],
-                  [g,h,i]])
+    A = np.array([[a11, a12, a13],
+                  [a21,a22,a23],
+                  [a31,a32,a33]])
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
@@ -112,12 +114,12 @@ def pöörd3m(a,b,c,d,e,f,g,h,i):
         return inv
 
 #4*4 pöördmatrix
-def pöörd4m(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p):
+def pöörd4m(a11,a12,a13,a14,a21,a22,a23,a24,a31,a32,a33,a34,a41,a42,a43,a44):
     # Taking a 4*4 matrix
-    A = np.array([[a, b, c,d],
-                  [e,f,g,h],
-                  [i,j,k,l],
-                  [m,n,o,p]])
+    A = np.array([[a11, a12, a13,a14],
+                  [a21,a22,a23,a24],
+                  [a31,a32,a33,a34],
+                  [a41,a42,a43,a44]])
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
@@ -131,13 +133,12 @@ def pöörd4m(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p):
 
     
     #5*5 pöördmatrix
-def pöörd5m(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y):
+def pöörd5m(a11,a12,a13,a14,a15,a21,a22,a23,a24,a25,a31,a32,a33,a34,a35,a41,a42,a43,a44,a45):
     # Taking a 5*5 matrix
-    A = np.array([[a, b, c,d,e],
-                  [f,g,h,i,j],
-                  [k,l,m,n,o],
-                  [p,q,r,s,t],
-                  [u,v,w,x,y]])
+    A = np.array([[a11, a12, a13,a14,a15],
+                  [a21,a22,a23,a24,a25],
+                  [a31,a32,a33,a34,a35],
+                  [a41,a42,a43,a44,a45]])
     #kas det 0?
     det = np.linalg.det(A)
     if det==0:
