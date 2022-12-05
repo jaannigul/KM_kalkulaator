@@ -104,7 +104,107 @@ def sk_input():
         sk_kuva_vastus.configure(text=f"{vastus}")
     except:
         sk_kuva_vastus.configure(text="Vale sisend")
-    
+def tjärkudet_input():
+    try:
+        vastus=funktsioonid.det2(
+            float(tdet_a11.get()), 
+            float(tdet_a12.get()),
+            float(tdet_a21.get()),
+            float(tdet_a22.get())
+            )
+        tjärkudet_kuva_vastus.configure(text=f"{vastus}")
+    except: tjärkudet_kuva_vastus.configure(text="Vale Sisend")
+def kjärkudet_input():
+    try:
+        vastus=funktsioonid.det3(
+            float(kdet_a11.get()), 
+            float(kdet_a12.get()),
+            float(kdet_a13.get()),
+            
+            float(kdet_a21.get()),
+            float(kdet_a22.get()),
+            float(kdet_a23.get()),
+            
+            float(kdet_a31.get()),
+            float(kdet_a32.get()),
+            float(kdet_a33.get())
+            )
+        kjärkudet_kuva_vastus.configure(text=f"{vastus}")
+    except: kjärkudet_kuva_vastus.configure(text="Vale Sisend")
+def njärkudet_input():
+    try:
+        vastus=funktsioonid.det3(
+            float(ndet_a11.get()), 
+            float(ndet_a12.get()),
+            float(ndet_a13.get()),
+            float(ndet_a14.get()),
+            
+            float(ndet_a21.get()),
+            float(ndet_a22.get()),
+            float(ndet_a23.get()),
+            float(ndet_a24.get()),
+            
+            float(ndet_a31.get()),
+            float(ndet_a32.get()),
+            float(ndet_a33.get()),
+            float(ndet_a34.get()),
+            
+            float(ndet_a41.get()),
+            float(ndet_a42.get()),
+            float(ndet_a43.get()),
+            float(ndet_a44.get())
+            
+            )
+        njärkudet_kuva_vastus.configure(text=f"{vastus}")
+    except: njärkudet_kuva_vastus.configure(text="Vale Sisend")
+def vjärkudet_input():
+    try:
+        vastus=funktsioonid.det3(
+            float(vdet_a11.get()), 
+            float(vdet_a12.get()),
+            float(vdet_a13.get()),
+            float(vdet_a14.get()),
+            float(vdet_a15.get()),
+            
+            float(vdet_a21.get()),
+            float(vdet_a22.get()),
+            float(vdet_a23.get()),
+            float(vdet_a24.get()),
+            float(vdet_a25.get()),
+            
+            float(vdet_a31.get()),
+            float(vdet_a32.get()),
+            float(vdet_a33.get()),
+            float(vdet_a34.get()),
+            float(vdet_a35.get()),
+            
+            float(vdet_a41.get()),
+            float(vdet_a42.get()),
+            float(vdet_a43.get()),
+            float(vdet_a44.get()),
+            float(vdet_a45.get()),
+            
+            )
+        vjärkudet_kuva_vastus.configure(text=f"{vastus}")
+    except: vjärkudet_kuva_vastus.configure(text="Vale Sisend")
+def vahetus_det2_raami():
+    tjärkudet_tiitel.place(x=300,y=40)
+def vahetus_det3_raami():
+    kjärkudet_tiitel.place(x=300,y=40)
+def vahetus_det4_raami():
+    njärkudet_tiitel.place(x=300,y=40)
+def vahetus_det5_raami():
+    vjärkudet_tiitel.place(x=300,y=40)
+def det_menu(valik):
+    valik=detlabel.get()
+    if valik=="2. järku determinant":
+        vahetus_det2_raami()
+    if valik=="3. järku determinant":
+        vahetus_det3_raami()
+    if valik.get()=="4. järku determinant":
+        vahetus_det4_raami()
+    if valik.get()=="5. järku determinant":
+        vahetus_det5_raami()
 BUTTON_WIDTH=30
 BUTTON_MARGIN=40
 INPUT_MARGIN_X=55
@@ -150,6 +250,107 @@ sk_z3=ttk.Entry(root, width=6)
 
 sk_nupp_arvuta=ttk.Button(root,text="Arvuta",command=sk_input)
 sk_kuva_vastus=tk.Label(root)
+
+#2. järku determinant
+tjärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
+tdet_a11=ttk.Entry(root, width=6)
+tdet_a12=ttk.Entry(root, width=6)
+tdet_a21=ttk.Entry(root, width=6)
+tdet_a22=ttk.Entry(root, width=6)
+
+tjärkudet_arvuta=ttk.Button(root,text="Arvuta",command=tjärkudet_input)
+tjärkudet_kuva_vastus=tk.Label(root)
+
+#3. järku determinant
+kjärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
+kdet_a11=ttk.Entry(root, width=6)
+kdet_a12=ttk.Entry(root, width=6)
+kdet_a13=ttk.Entry(root, width=6)
+
+kdet_a21=ttk.Entry(root, width=6)
+kdet_a22=ttk.Entry(root, width=6)
+kdet_a23=ttk.Entry(root, width=6)
+
+kdet_a31=ttk.Entry(root, width=6)
+kdet_a32=ttk.Entry(root, width=6)
+kdet_a33=ttk.Entry(root, width=6)
+
+kjärkudet_arvuta=ttk.Button(root,text="Arvuta",command=kjärkudet_input)
+kjärkudet_kuva_vastus=tk.Label(root)
+
+#4. järku determinant
+njärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
+ndet_a11=ttk.Entry(root, width=6)
+ndet_a12=ttk.Entry(root, width=6)
+ndet_a13=ttk.Entry(root, width=6)
+ndet_a14=ttk.Entry(root, width=6)
+
+ndet_a21=ttk.Entry(root, width=6)
+ndet_a22=ttk.Entry(root, width=6)
+ndet_a23=ttk.Entry(root, width=6)
+ndet_a24=ttk.Entry(root, width=6)
+
+ndet_a31=ttk.Entry(root, width=6)
+ndet_a32=ttk.Entry(root, width=6)
+ndet_a33=ttk.Entry(root, width=6)
+ndet_a34=ttk.Entry(root, width=6)
+
+ndet_a41=ttk.Entry(root, width=6)
+ndet_a42=ttk.Entry(root, width=6)
+ndet_a43=ttk.Entry(root, width=6)
+ndet_a44=ttk.Entry(root, width=6)
+
+njärkudet_arvuta=ttk.Button(root,text="Arvuta",command=njärkudet_input)
+njärkudet_kuva_vastus=tk.Label(root)
+
+#5. järku determinant
+vjärkudet_tiitel=ttk.Label(root,text="Teist järku determinant")
+vdet_a11=ttk.Entry(root, width=6)
+vdet_a12=ttk.Entry(root, width=6)
+vdet_a13=ttk.Entry(root, width=6)
+vdet_a14=ttk.Entry(root, width=6)
+vdet_a15=ttk.Entry(root, width=6)
+
+vdet_a21=ttk.Entry(root, width=6)
+vdet_a22=ttk.Entry(root, width=6)
+vdet_a23=ttk.Entry(root, width=6)
+vdet_a24=ttk.Entry(root, width=6)
+vdet_a25=ttk.Entry(root, width=6)
+
+vdet_a31=ttk.Entry(root, width=6)
+vdet_a32=ttk.Entry(root, width=6)
+vdet_a33=ttk.Entry(root, width=6)
+vdet_a34=ttk.Entry(root, width=6)
+vdet_a35=ttk.Entry(root, width=6)
+
+vdet_a41=ttk.Entry(root, width=6)
+vdet_a42=ttk.Entry(root, width=6)
+vdet_a43=ttk.Entry(root, width=6)
+vdet_a44=ttk.Entry(root, width=6)
+vdet_a45=ttk.Entry(root, width=6)
+
+vdet_a51=ttk.Entry(root, width=6)
+vdet_a52=ttk.Entry(root, width=6)
+vdet_a53=ttk.Entry(root, width=6)
+vdet_a54=ttk.Entry(root, width=6)
+vdet_a55=ttk.Entry(root, width=6)
+
+vjärkudet_arvuta=ttk.Button(root,text="Arvuta",command=vjärkudet_input)
+vjärkudet_kuva_vastus=tk.Label(root)
+
+#muutujad listis
+muutujad=[[vk_tiitel,
+           vk_vektor1x,vk_vektor1y,vk_vektor1z,
+           vk_vektor1_tekst,
+           vk_vektor2x,vk_vektor2y,vk_vektor2z,
+           vk_vektor2_tekst,vk_nupp_arvuta,vk_kuva_vastus], #0
+          
+          [sk_tiitel,
+           sk_x1,sk_y1,sk_z1,
+           sk_x2,sk_y2,sk_z2,
+           sk_x3,sk_y3,sk_z3,
+           sk_nupp_arvuta,sk_kuva_vastus], #1
+          ]
 #menüü nupud
 vkcalc = ttk.Button(
     root,
@@ -163,12 +364,33 @@ skcalc = ttk.Button(
     width=BUTTON_WIDTH,
     command=vahetus_sk_raami,
 )
-nupp= ttk.Button(
-    root,
-    text="nupp",
-    width=BUTTON_WIDTH,
-    command=exit,
-)
+
+
+#menubutton determinandi jaoks
+
+# determinandid=ttk.Menubutton(root,
+#                            text="                 Determinandid", #sobib ajutiseks lahenduseks kah
+#                            width=26,
+#                            )
+
+# determinandid.menu=ttk.Menu(determinandid,tearoff=0)
+# determinandid["menu"]=determinandid.menu
+
+detlabel=ttk.StringVar(root)
+#detlabel.trace('w',det_menu)
+valikud=[
+    "2. järku determinant",
+    "2. järku determinant",
+    "3. järku determinant",
+    "4. järku determinant",
+    "5. järku determinant"
+]
+determinandid=ttk.OptionMenu(root, detlabel,*valikud,command=det_menu)
+determinandid.config(width=BUTTON_WIDTH-4)
+detlabel.set("Determinandid")
+# for i in valikud:
+#     determinandid.menu.add_radiobutton(label=i,variable=detlabel)
+
 
 #menüü nuppude asetus
 vkcalc.place(
@@ -179,9 +401,9 @@ skcalc.place(
     x=15,
     y=BUTTON_MARGIN*2,
 )
-nupp.place(
-    x=15,
-    y=BUTTON_MARGIN*3,
-)
 
+determinandid.place(
+    x=15,
+    y=BUTTON_MARGIN*3
+)
 root.mainloop()
