@@ -209,6 +209,69 @@ def kpm_input():
         )
         kpm_kuva_vastus.configure(text=f"{vastus}")
     except: kpm_kuva_vastus.configure(text="Vale sisend")
+def npm_input():
+    try:
+        vastus=funktsioonid.pöörd4m(
+            float(npm_a11.get()), 
+            float(npm_a12.get()),
+            float(npm_a13.get()),
+            float(npm_a14.get()),
+            
+            float(npm_a21.get()),
+            float(npm_a22.get()),
+            float(npm_a23.get()),
+            float(npm_a24.get()),
+            
+            float(npm_a31.get()),
+            float(npm_a32.get()),
+            float(npm_a33.get()),
+            float(npm_a34.get()),
+            
+            float(npm_a41.get()),
+            float(npm_a42.get()),
+            float(npm_a43.get()),
+            float(npm_a44.get())
+            
+            )
+        npm_kuva_vastus.configure(text=f"{vastus}")
+    except: npm_kuva_vastus.configure(text="Vale sisend")
+def vpm_input():
+    try:
+        vastus=funktsioonid.pöörd5m(
+            float(vpm_a11.get()), 
+            float(vpm_a12.get()),
+            float(vpm_a13.get()),
+            float(vpm_a14.get()),
+            float(vpm_a15.get()),
+            
+            float(vpm_a21.get()),
+            float(vpm_a22.get()),
+            float(vpm_a23.get()),
+            float(vpm_a24.get()),
+            float(vpm_a25.get()),
+            
+            float(vpm_a31.get()),
+            float(vpm_a32.get()),
+            float(vpm_a33.get()),
+            float(vpm_a34.get()),
+            float(vpm_a35.get()),
+            
+            float(vpm_a41.get()),
+            float(vpm_a42.get()),
+            float(vpm_a43.get()),
+            float(vpm_a44.get()),
+            float(vpm_a45.get()),
+            
+            float(vpm_a51.get()),
+            float(vpm_a52.get()),
+            float(vpm_a53.get()),
+            float(vpm_a54.get()),
+            float(vpm_a55.get()),
+            
+            )
+        vpm_kuva_vastus.configure(text=f"{vastus}")
+    except: vpm_kuva_vastus.configure(text="Vale sisend")    
+
 def vahetus_det2_raami():
     puhasta_lahtrid()
     tjärkudet_tiitel.place(x=300,y=40)
@@ -316,9 +379,46 @@ def vahetus_pm3_raami():
             for j in muutujad[i]:
                 j.place_forget()
 def vahetus_pm4_raami():
-    pass
+    puhasta_lahtrid()
+    npm_tiitel.place(x=300,y=40)
+    for i,var in enumerate(muutujad[8][1:17],start=0):
+        if i<4:
+            var.place(x=360+INPUT_MARGIN_X*i, y=80)
+        elif i<8:
+            var.place(x=360+INPUT_MARGIN_X*(i-4), y=80+INPUT_MARGIN_Y)
+        elif i<12:
+            var.place(x=360+INPUT_MARGIN_X*(i-8), y=80+INPUT_MARGIN_Y*2)
+        elif i<16:
+            var.place(x=360+INPUT_MARGIN_X*(i-12), y=80+INPUT_MARGIN_Y*3)
+        
+    npm_arvuta.place(x=360,y=80+INPUT_MARGIN_Y*3+CALC_MARGIN)
+    npm_kuva_vastus.place(x=360+RESULT_MARGIN,y=80+INPUT_MARGIN_Y*3+CALC_MARGIN+3)
+    for i in range(len(muutujad)):
+        if i !=4:
+            for j in muutujad[i]:
+                j.place_forget()
 def vahetus_pm5_raami():
-    pass
+    puhasta_lahtrid()
+    vpm_tiitel.place(x=300,y=40)
+    for i,var in enumerate(muutujad[9][1:26],start=0):
+        if i<5:
+            var.place(x=360+INPUT_MARGIN_X*i, y=80)
+        elif i<10:
+            var.place(x=360+INPUT_MARGIN_X*(i-5), y=80+INPUT_MARGIN_Y)
+        elif i<15:
+            var.place(x=360+INPUT_MARGIN_X*(i-10), y=80+INPUT_MARGIN_Y*2)
+        elif i<20:
+            var.place(x=360+INPUT_MARGIN_X*(i-15), y=80+INPUT_MARGIN_Y*3)
+        elif i<25:
+            var.place(x=360+INPUT_MARGIN_X*(i-20), y=80+INPUT_MARGIN_Y*4)
+        
+    vpm_arvuta.place(x=360,y=80+INPUT_MARGIN_Y*4+CALC_MARGIN)
+    vpm_kuva_vastus.place(x=360+RESULT_MARGIN,y=80+INPUT_MARGIN_Y*4+CALC_MARGIN+3)
+    
+    for i in range(len(muutujad)):
+        if i !=5:
+            for j in muutujad[i]:
+                j.place_forget()
 
 def det_menu(valik):
     valik=detlabel.get()
@@ -506,6 +606,67 @@ kpm_a33=ttk.Entry(root, width=6)
 
 kpm_arvuta=ttk.Button(root,text="Arvuta",command=kpm_input)
 kpm_kuva_vastus=tk.Label(root)
+
+#4. järku pöördmaatriks
+npm_tiitel=ttk.Label(root,text="Neljandat järku pöördmaatriks")
+npm_a11=ttk.Entry(root, width=6)
+npm_a12=ttk.Entry(root, width=6)
+npm_a13=ttk.Entry(root, width=6)
+npm_a14=ttk.Entry(root, width=6)
+
+npm_a21=ttk.Entry(root, width=6)
+npm_a22=ttk.Entry(root, width=6)
+npm_a23=ttk.Entry(root, width=6)
+npm_a24=ttk.Entry(root, width=6)
+
+npm_a31=ttk.Entry(root, width=6)
+npm_a32=ttk.Entry(root, width=6)
+npm_a33=ttk.Entry(root, width=6)
+npm_a34=ttk.Entry(root, width=6)
+
+npm_a41=ttk.Entry(root, width=6)
+npm_a42=ttk.Entry(root, width=6)
+npm_a43=ttk.Entry(root, width=6)
+npm_a44=ttk.Entry(root, width=6)
+
+npm_arvuta=ttk.Button(root,text="Arvuta",command=npm_input)
+npm_kuva_vastus=tk.Label(root)
+
+#5. järku pöördmaatriks
+vpm_tiitel=ttk.Label(root,text="Viiendat järku pöördmaatriks")
+vpm_a11=ttk.Entry(root, width=6)
+vpm_a12=ttk.Entry(root, width=6)
+vpm_a13=ttk.Entry(root, width=6)
+vpm_a14=ttk.Entry(root, width=6)
+vpm_a15=ttk.Entry(root, width=6)
+
+vpm_a21=ttk.Entry(root, width=6)
+vpm_a22=ttk.Entry(root, width=6)
+vpm_a23=ttk.Entry(root, width=6)
+vpm_a24=ttk.Entry(root, width=6)
+vpm_a25=ttk.Entry(root, width=6)
+
+vpm_a31=ttk.Entry(root, width=6)
+vpm_a32=ttk.Entry(root, width=6)
+vpm_a33=ttk.Entry(root, width=6)
+vpm_a34=ttk.Entry(root, width=6)
+vpm_a35=ttk.Entry(root, width=6)
+
+vpm_a41=ttk.Entry(root, width=6)
+vpm_a42=ttk.Entry(root, width=6)
+vpm_a43=ttk.Entry(root, width=6)
+vpm_a44=ttk.Entry(root, width=6)
+vpm_a45=ttk.Entry(root, width=6)
+
+vpm_a51=ttk.Entry(root, width=6)
+vpm_a52=ttk.Entry(root, width=6)
+vpm_a53=ttk.Entry(root, width=6)
+vpm_a54=ttk.Entry(root, width=6)
+vpm_a55=ttk.Entry(root, width=6)
+
+vpm_arvuta=ttk.Button(root,text="Arvuta",command=vpm_input)
+vpm_kuva_vastus=tk.Label(root)
+
 #muutujad listis sega ja vektorkorrutis (tegelikult objektid)
 muutujad=[[vk_tiitel,
            vk_vektor1x,vk_vektor1y,vk_vektor1z,
@@ -543,14 +704,30 @@ muutujad=[[vk_tiitel,
             vdet_a41,vdet_a42,vdet_a43,vdet_a44,vdet_a45,
             vdet_a51,vdet_a52,vdet_a53,vdet_a54,vdet_a55, #5
             vjärkudet_arvuta,vjärkudet_kuva_vastus],
-            
+            #pöördmatriksid
             [tpm_tiitel,
              tpm_a11,tpm_a12,tpm_a21,tpm_a22, #6
              tpm_arvuta,tpm_kuva_vastus],
+          
             [kpm_tiitel,
              kpm_a11,kpm_a12,kpm_a13,kpm_a21,kpm_a22,kpm_a23,kpm_a31,kpm_a32,kpm_a33, #7
-             kpm_arvuta,kpm_kuva_vastus]
-            ]
+             kpm_arvuta,kpm_kuva_vastus],
+
+            [npm_tiitel,
+            npm_a11,npm_a12,npm_a13,npm_a14,
+            npm_a21,npm_a22,npm_a23,npm_a24,
+            npm_a31,npm_a32,npm_a33,npm_a34,
+            npm_a41,npm_a42,npm_a43,npm_a44,
+            npm_arvuta,npm_kuva_vastus],#8
+            
+            [vpm_tiitel,
+            vpm_a11,vpm_a12,vpm_a13,vpm_a14,vpm_a15,
+            vpm_a21,vpm_a22,vpm_a23,vpm_a24,vpm_a25,
+            vpm_a31,vpm_a32,vpm_a33,vpm_a34,vpm_a35,
+            vpm_a41,vpm_a42,vpm_a43,vpm_a44,vpm_a45,
+            vpm_a51,vpm_a52,vpm_a53,vpm_a54,vpm_a55, #9
+            vpm_arvuta,vpm_kuva_vastus],
+                      ]
 
 def puhasta_lahtrid():
     for i in muutujad:
@@ -586,19 +763,27 @@ puhastalahtrid = ttk.Button(root,
 #menüünupp determinandi jaoks
 
 detlabel=ttk.StringVar(root)
-valikud=[
+detvalikud=[
     "2. järku determinant",
     "2. järku determinant",#miskipärast vajab see 2 korda seda elementi, et asi töötaks
     "3. järku determinant",
     "4. järku determinant",
     "5. järku determinant"
 ]
-determinandid=ttk.OptionMenu(root, detlabel,*valikud,command=det_menu)
+#valikud pöördmaatriksi jaoks
+pmvalikud=[
+    "2. järku pöördmaatriks",
+    "2. järku pöördmaatriks",#miskipärast vajab see 2 korda seda elementi, et asi töötaks
+    "3. järku pöördmaatriks",
+    "4. järku pöördmaatriks",
+    "5. järku pöördmaatriks"
+]
+determinandid=ttk.OptionMenu(root, detlabel,*detvalikud,command=det_menu)
 determinandid.config(width=BUTTON_WIDTH-4)
 detlabel.set("Determinandid") #algväärtus
 #menüünupp pöördmaatriksite jaoks
 pmlabel=ttk.StringVar(root)
-pöördmaatriksid=ttk.OptionMenu(root, pmlabel,*valikud,command=pm_menu)
+pöördmaatriksid=ttk.OptionMenu(root, pmlabel,*pmvalikud,command=pm_menu)
 pöördmaatriksid.config(width=BUTTON_WIDTH-4)
 pmlabel.set("Pöördmaatriksid") #algväärtus
 #menüü nuppude asetus
