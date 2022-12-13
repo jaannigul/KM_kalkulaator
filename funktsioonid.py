@@ -1,3 +1,11 @@
+try:  #proovib kas numpy on juba installeeritud, kui mitte, siis installeerib selle
+    import numpy as np #pip install numpy
+except ImportError:
+    import subprocess
+    import sys
+    def install(package): #vajadusel installeerib puuduolevad moodulid
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    install('numpy') 
 import numpy as np
 import fractions
 import math
@@ -95,7 +103,6 @@ def pöörd2m(a11,a12,a21,a22):
         np.set_printoptions(formatter={'all':lambda x: str(fractions.Fraction(x).limit_denominator())})
         return inv
 
-    
 
 #3*3 pöördmatrix
 def pöörd3m(a11,a12,a13,a21,a22,a23,a31,a32,a33):
