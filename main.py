@@ -710,7 +710,7 @@ muutujad=[[vk_tiitel,
             vdet_a41,vdet_a42,vdet_a43,vdet_a44,vdet_a45,
             vdet_a51,vdet_a52,vdet_a53,vdet_a54,vdet_a55, #5
             vjärkudet_arvuta,vjärkudet_kuva_vastus],
-            #pöördmatriksid
+            #pöördmaatriksid
             [tpm_tiitel,
              tpm_a11,tpm_a12,tpm_a21,tpm_a22, #6
              tpm_arvuta,tpm_kuva_vastus],
@@ -753,8 +753,7 @@ vkcalc = ttk.Button(
     root,
     text="Vektorkorrutise kalkulaator",
     width=BUTTON_WIDTH,
-    command=vahetus_vk_raami,
-)
+    command=vahetus_vk_raami,)
 skcalc = ttk.Button(
     root,
     text="Segakorrutise kalkulaator",
@@ -779,7 +778,7 @@ detvalikud=[
 #valikud pöördmaatriksi jaoks
 pmvalikud=[
     "2. järku pöördmaatriks",
-    "2. järku pöördmaatriks",#miskipärast vajab see 2 korda seda elementi, et asi töötaks
+    "2. järku pöördmaatriks",
     "3. järku pöördmaatriks",
     "4. järku pöördmaatriks",
     "5. järku pöördmaatriks"
