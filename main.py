@@ -13,6 +13,8 @@ import funktsioonid
 #funktsioonid paigutuseks 
 def vahetus_vk_raami():
     puhasta_lahtrid()
+    detlabel.set("Determinandid")
+    pmlabel.set("Pöördmaatriksid")
     vk_tiitel.place(x=300,y=40)
     vk_vektor1_tekst.place(x=300,y=80)
     
@@ -37,6 +39,8 @@ def vahetus_vk_raami():
 
 def vahetus_sk_raami():
     puhasta_lahtrid()
+    detlabel.set("Determinandid")
+    pmlabel.set("Pöördmaatriksid")
     sk_tiitel.place(x=300,y=40)
     
     sk_x1.place(x=360,y=80)
@@ -394,7 +398,7 @@ def vahetus_pm4_raami():
     npm_arvuta.place(x=360,y=80+INPUT_MARGIN_Y*3+CALC_MARGIN)
     npm_kuva_vastus.place(x=360+RESULT_MARGIN,y=80+INPUT_MARGIN_Y*3+CALC_MARGIN+3)
     for i in range(len(muutujad)):
-        if i !=4:
+        if i !=8:
             for j in muutujad[i]:
                 j.place_forget()
 def vahetus_pm5_raami():
@@ -416,11 +420,12 @@ def vahetus_pm5_raami():
     vpm_kuva_vastus.place(x=360+RESULT_MARGIN,y=80+INPUT_MARGIN_Y*4+CALC_MARGIN+3)
     
     for i in range(len(muutujad)):
-        if i !=5:
+        if i !=9:
             for j in muutujad[i]:
                 j.place_forget()
 
 def det_menu(valik):
+    pmlabel.set("Pöördmaatriksid")
     valik=detlabel.get()
     if valik=="2. järku determinant":
         vahetus_det2_raami()
@@ -431,14 +436,15 @@ def det_menu(valik):
     if valik=="5. järku determinant":
         vahetus_det5_raami()
 def pm_menu(valik):
+    detlabel.set("Determinandid")
     valik=pmlabel.get()
-    if valik=="2. järku determinant":
+    if valik=="2. järku pöördmaatriks":
         vahetus_pm2_raami()
-    if valik=="3. järku determinant":
+    if valik=="3. järku pöördmaatriks":
         vahetus_pm3_raami()
-    if valik=="4. järku determinant":
+    if valik=="4. järku pöördmaatriks":
         vahetus_pm4_raami()
-    if valik=="5. järku determinant":
+    if valik=="5. järku pöördmaatriks":
         vahetus_pm5_raami()
         
 #konstandid
@@ -737,7 +743,7 @@ def puhasta_lahtrid():
             except: #tk labelite puhastus
                 if j in [vk_kuva_vastus,sk_kuva_vastus,
                          tjärkudet_kuva_vastus,njärkudet_kuva_vastus,vjärkudet_kuva_vastus,
-                         tpm_kuva_vastus,kpm_kuva_vastus]:
+                         tpm_kuva_vastus,kpm_kuva_vastus,npm_kuva_vastus,vpm_kuva_vastus]:
                     j.configure(text="")
                 continue
 
